@@ -103,7 +103,7 @@ func (program Program) GetActiveUniforms() int32 {
 }
 
 // GetInfoLog returns the information log for the Program object. It contains
-// errors that ocurred during failed linking or validation of Program objects.
+// errors that occurred during failed linking or validation of Program objects.
 func (program Program) GetInfoLog() string {
 	var bufSize int32
 	gl.GetProgramiv(uint32(program), gl.INFO_LOG_LENGTH, &bufSize)

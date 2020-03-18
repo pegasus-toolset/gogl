@@ -17,7 +17,7 @@ import "github.com/go-gl/gl/v2.1/gl"
 // after switching between OpenGL contexts may work if the contexts belong to
 // the same graphics driver/device).
 //
-// On macOS and the other POSIX systems, the behavoir is different, but code
+// On macOS and the other POSIX systems, the behavior is different, but code
 // written compatible with the Windows behavior is compatible with macOS and the
 // other POSIX systems. That is, always Init under an active OpenGL context, and
 // always re-init after switching graphics contexts.
