@@ -23,7 +23,77 @@ func (renderbuffer Renderbuffer) Delete() {
 	gl.DeleteRenderbuffers(1, &renderbuffers)
 }
 
-// TODO: GetRenderbufferParameter
+// GetRenderbufferWidth returns an int32 indicating the width of the image of
+// the currently bound renderbuffer.
+func GetRenderbufferWidth(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_WIDTH, &params)
+	return params
+}
+
+// GetRenderbufferHeight returns an int32 indicating the height of the image of
+// the currently bound renderbuffer.
+func GetRenderbufferHeight(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_HEIGHT, &params)
+	return params
+}
+
+// GetRenderbufferInternalFormat returns a GLEnum indicating the internal format
+// of the currently bound renderbuffer. The default is GLRGBA4.
+func GetRenderbufferInternalFormat(target GLEnum) GLEnum {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_INTERNAL_FORMAT, &params)
+	return GLEnum(params)
+}
+
+// GetRenderbufferGreenSize returns an int32 that is the resolution size (in
+// bits) for the green color.
+func GetRenderbufferGreenSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_GREEN_SIZE, &params)
+	return params
+}
+
+// GetRenderbufferBlueSize returns an int32 that is the resolution size (in
+// bits) for the blue color.
+func GetRenderbufferBlueSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_BLUE_SIZE, &params)
+	return params
+}
+
+// GetRenderbufferRedSize returns an int32 that is the resolution size (in bits)
+// for the red color.
+func GetRenderbufferRedSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_RED_SIZE, &params)
+	return params
+}
+
+// GetRenderbufferAlphaSize returns an int32 that is the resolution size (in
+// bits) for the alpha component.
+func GetRenderbufferAlphaSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_ALPHA_SIZE, &params)
+	return params
+}
+
+// GetRenderbufferDepthSize returns an int32 that is the resolution size (in
+// bits) for the depth component.
+func GetRenderbufferDepthSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_DEPTH_SIZE, &params)
+	return params
+}
+
+// GetRenderbufferStencilSize returns an int32 that is the resolution size (in
+// bits) for the stencil component.
+func GetRenderbufferStencilSize(target GLEnum) int32 {
+	var params int32
+	gl.GetRenderbufferParameteriv(uint32(target), gl.RENDERBUFFER_STENCIL_SIZE, &params)
+	return params
+}
 
 // IsRenderbuffer returns true if the Renderbuffer is valid and false otherwise.
 func (renderbuffer Renderbuffer) IsRenderbuffer() bool {
