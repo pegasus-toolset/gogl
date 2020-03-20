@@ -37,7 +37,19 @@ func (buffer Buffer) Delete() {
 	gl.DeleteBuffers(1, &buffers)
 }
 
-// TODO: GetBufferParameter
+// GetBufferSize returns an int32 indicating the size of the buffer in bytes.
+func GetBufferSize(target GLEnum) int32 {
+	var params int32
+	gl.GetBufferParameteriv(uint32(target), gl.BUFFER_SIZE, &params)
+	return params
+}
+
+// GetBufferUsage returns a GLEnum indicating the usage pattern of the buffer.
+func GetBufferUsage(target GLEnum) GLEnum {
+	var params int32
+	gl.GetBufferParameteriv(uint32(target), gl.BUFFER_USAGE, &params)
+	return GLEnum(params)
+}
 
 // IsBuffer returns true if the Buffer is valid and false otherwise.
 func (buffer Buffer) IsBuffer() bool {
