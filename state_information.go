@@ -109,7 +109,577 @@ func FrontFace(mode GLEnum) {
 	gl.FrontFace(uint32(mode))
 }
 
-// TODO: GetParameter
+// GetActiveTexture returns a value for the passed parameter name.
+func GetActiveTexture() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.ACTIVE_TEXTURE, &data)
+	return GLEnum(data)
+}
+
+// GetAliasedLineWidthRange returns a value for the passed parameter name.
+func GetAliasedLineWidthRange() [2]float32 {
+	var data [2]float32
+	gl.GetFloatv(gl.ALIASED_LINE_WIDTH_RANGE, &data[0])
+	return data
+}
+
+// GetAliasedPointSizeRange returns a value for the passed parameter name.
+func GetAliasedPointSizeRange() [2]float32 {
+	var data [2]float32
+	gl.GetFloatv(gl.ALIASED_POINT_SIZE_RANGE, &data[0])
+	return data
+}
+
+// GetAlphaBits returns a value for the passed parameter name.
+func GetAlphaBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.ALPHA_BITS, &data)
+	return data
+}
+
+// GetArrayBufferBinding returns a value for the passed parameter name.
+func GetArrayBufferBinding() Buffer {
+	var data int32
+	gl.GetIntegerv(gl.ARRAY_BUFFER_BINDING, &data)
+	return Buffer(data)
+}
+
+// GetBlend returns a value for the passed parameter name.
+func GetBlend() bool {
+	var data bool
+	gl.GetBooleanv(gl.BLEND, &data)
+	return data
+}
+
+// GetBlendColor returns a value for the passed parameter name.
+func GetBlendColor() [4]float32 {
+	var data [4]float32
+	gl.GetFloatv(gl.BLEND_COLOR, &data[0])
+	return data
+}
+
+// GetBlendDstAlpha returns a value for the passed parameter name.
+func GetBlendDstAlpha() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_DST_ALPHA, &data)
+	return GLEnum(data)
+}
+
+// GetBlendDstRGB returns a value for the passed parameter name.
+func GetBlendDstRGB() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_DST_RGB, &data)
+	return GLEnum(data)
+}
+
+// GetBlendEquation returns a value for the passed parameter name.
+func GetBlendEquation() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_EQUATION, &data)
+	return GLEnum(data)
+}
+
+// GetBlendEquationAlpha returns a value for the passed parameter name.
+func GetBlendEquationAlpha() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_EQUATION_ALPHA, &data)
+	return GLEnum(data)
+}
+
+// GetBlendEquationRGB returns a value for the passed parameter name.
+func GetBlendEquationRGB() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_EQUATION_RGB, &data)
+	return GLEnum(data)
+}
+
+// GetBlendSrcAlpha returns a value for the passed parameter name.
+func GetBlendSrcAlpha() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_SRC_ALPHA, &data)
+	return GLEnum(data)
+}
+
+// GetBlendSrcRGB returns a value for the passed parameter name.
+func GetBlendSrcRGB() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.BLEND_SRC_RGB, &data)
+	return GLEnum(data)
+}
+
+// GetBlueBits returns a value for the passed parameter name.
+func GetBlueBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.BLUE_BITS, &data)
+	return data
+}
+
+// GetColorClearValue returns a value for the passed parameter name.
+func GetColorClearValue() [4]float32 {
+	var data [4]float32
+	gl.GetFloatv(gl.COLOR_CLEAR_VALUE, &data[0])
+	return data
+}
+
+// GetColorWritemask returns a value for the passed parameter name.
+func GetColorWritemask() [4]bool {
+	var data [4]bool
+	gl.GetBooleanv(gl.COLOR_WRITEMASK, &data[0])
+	return data
+}
+
+// TODO: GetCompressedTextureFormats
+
+// GetCullFace returns a value for the passed parameter name.
+func GetCullFace() bool {
+	var data bool
+	gl.GetBooleanv(gl.CULL_FACE, &data)
+	return data
+}
+
+// GetCullFaceMode returns a value for the passed parameter name.
+func GetCullFaceMode() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.CULL_FACE_MODE, &data)
+	return GLEnum(data)
+}
+
+// GetCurrentProgram returns a value for the passed parameter name.
+func GetCurrentProgram() Program {
+	var data int32
+	gl.GetIntegerv(gl.CURRENT_PROGRAM, &data)
+	return Program(data)
+}
+
+// GetDepthBits returns a value for the passed parameter name.
+func GetDepthBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.DEPTH_BITS, &data)
+	return data
+}
+
+// GetDepthClearValue returns a value for the passed parameter name.
+func GetDepthClearValue() float32 {
+	var data float32
+	gl.GetFloatv(gl.DEPTH_CLEAR_VALUE, &data)
+	return data
+}
+
+// GetDepthFunc returns a value for the passed parameter name.
+func GetDepthFunc() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.DEPTH_FUNC, &data)
+	return GLEnum(data)
+}
+
+// GetDepthRange returns a value for the passed parameter name.
+func GetDepthRange() [2]float32 {
+	var data [2]float32
+	gl.GetFloatv(gl.DEPTH_RANGE, &data[0])
+	return data
+}
+
+// GetDepthTest returns a value for the passed parameter name.
+func GetDepthTest() bool {
+	var data bool
+	gl.GetBooleanv(gl.DEPTH_TEST, &data)
+	return data
+}
+
+// GetDepthWritemask returns a value for the passed parameter name.
+func GetDepthWritemask() bool {
+	var data bool
+	gl.GetBooleanv(gl.DEPTH_WRITEMASK, &data)
+	return data
+}
+
+// GetDither returns a value for the passed parameter name.
+func GetDither() bool {
+	var data bool
+	gl.GetBooleanv(gl.DITHER, &data)
+	return data
+}
+
+// GetElementArrayBufferBinding returns a value for the passed parameter name.
+func GetElementArrayBufferBinding() Buffer {
+	var data int32
+	gl.GetIntegerv(gl.ELEMENT_ARRAY_BUFFER_BINDING, &data)
+	return Buffer(data)
+}
+
+// GetFramebufferBinding returns a value for the passed parameter name.
+func GetFramebufferBinding() Framebuffer {
+	var data int32
+	gl.GetIntegerv(gl.FRAMEBUFFER_BINDING, &data)
+	return Framebuffer(data)
+}
+
+// GetFrontFace returns a value for the passed parameter name.
+func GetFrontFace() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.FRONT_FACE, &data)
+	return GLEnum(data)
+}
+
+// GetGenerateMipmapHint returns a value for the passed parameter name.
+func GetGenerateMipmapHint() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.GENERATE_MIPMAP_HINT, &data)
+	return GLEnum(data)
+}
+
+// GetGreenBits returns a value for the passed parameter name.
+func GetGreenBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.GREEN_BITS, &data)
+	return data
+}
+
+// GetImplementationColorReadFormat returns a value for the passed parameter
+// name.
+func GetImplementationColorReadFormat() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.IMPLEMENTATION_COLOR_READ_FORMAT, &data)
+	return GLEnum(data)
+}
+
+// GetImplementationColorReadType returns a value for the passed parameter name.
+func GetImplementationColorReadType() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.IMPLEMENTATION_COLOR_READ_TYPE, &data)
+	return GLEnum(data)
+}
+
+// GetLineWidth returns a value for the passed parameter name.
+func GetLineWidth() float32 {
+	var data float32
+	gl.GetFloatv(gl.LINE_WIDTH, &data)
+	return data
+}
+
+// GetMaxCombinedTextureImageUnits returns a value for the passed parameter
+// name.
+func GetMaxCombinedTextureImageUnits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS, &data)
+	return data
+}
+
+// GetMaxCubeMapTextureSize returns a value for the passed parameter name.
+func GetMaxCubeMapTextureSize() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_CUBE_MAP_TEXTURE_SIZE, &data)
+	return data
+}
+
+// GetMaxFragmentUniformVectors returns a value for the passed parameter name.
+func GetMaxFragmentUniformVectors() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_FRAGMENT_UNIFORM_VECTORS, &data)
+	return data
+}
+
+// GetMaxRenderbufferSize returns a value for the passed parameter name.
+func GetMaxRenderbufferSize() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_RENDERBUFFER_SIZE, &data)
+	return data
+}
+
+// GetMaxTextureImageUnits returns a value for the passed parameter name.
+func GetMaxTextureImageUnits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_TEXTURE_IMAGE_UNITS, &data)
+	return data
+}
+
+// GetMaxTextureSize returns a value for the passed parameter name.
+func GetMaxTextureSize() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_TEXTURE_SIZE, &data)
+	return data
+}
+
+// GetMaxVaryingVectors returns a value for the passed parameter name.
+func GetMaxVaryingVectors() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_VARYING_VECTORS, &data)
+	return data
+}
+
+// GetMaxVertexAttribs returns a value for the passed parameter name.
+func GetMaxVertexAttribs() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_VERTEX_ATTRIBS, &data)
+	return data
+}
+
+// GetMaxVertexTextureImageUnits returns a value for the passed parameter name.
+func GetMaxVertexTextureImageUnits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS, &data)
+	return data
+}
+
+// GetMaxVertexUniformVectors returns a value for the passed parameter name.
+func GetMaxVertexUniformVectors() int32 {
+	var data int32
+	gl.GetIntegerv(gl.MAX_VERTEX_UNIFORM_VECTORS, &data)
+	return data
+}
+
+// GetMaxViewportDims returns a value for the passed parameter name.
+func GetMaxViewportDims() [2]int32 {
+	var data [2]int32
+	gl.GetIntegerv(gl.MAX_VIEWPORT_DIMS, &data[0])
+	return data
+}
+
+// GetPackAlignment returns a value for the passed parameter name.
+func GetPackAlignment() int32 {
+	var data int32
+	gl.GetIntegerv(gl.PACK_ALIGNMENT, &data)
+	return data
+}
+
+// GetPolygonOffsetFactor returns a value for the passed parameter name.
+func GetPolygonOffsetFactor() float32 {
+	var data float32
+	gl.GetFloatv(gl.POLYGON_OFFSET_FACTOR, &data)
+	return data
+}
+
+// GetPolygonOffsetFill returns a value for the passed parameter name.
+func GetPolygonOffsetFill() bool {
+	var data bool
+	gl.GetBooleanv(gl.POLYGON_OFFSET_FILL, &data)
+	return data
+}
+
+// GetPolygonOffsetUnits returns a value for the passed parameter name.
+func GetPolygonOffsetUnits() float32 {
+	var data float32
+	gl.GetFloatv(gl.POLYGON_OFFSET_UNITS, &data)
+	return data
+}
+
+// GetRedBits returns a value for the passed parameter name.
+func GetRedBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.RED_BITS, &data)
+	return data
+}
+
+// GetRenderbufferBinding returns a value for the passed parameter name.
+func GetRenderbufferBinding() Renderbuffer {
+	var data int32
+	gl.GetIntegerv(gl.RENDERBUFFER_BINDING, &data)
+	return Renderbuffer(data)
+}
+
+// TODO: GetRenderer
+
+// GetSampleBuffers returns a value for the passed parameter name.
+func GetSampleBuffers() int32 {
+	var data int32
+	gl.GetIntegerv(gl.SAMPLE_BUFFERS, &data)
+	return data
+}
+
+// GetSampleCoverageInvert returns a value for the passed parameter name.
+func GetSampleCoverageInvert() bool {
+	var data bool
+	gl.GetBooleanv(gl.SAMPLE_COVERAGE_INVERT, &data)
+	return data
+}
+
+// GetSampleCoverageValue returns a value for the passed parameter name.
+func GetSampleCoverageValue() float32 {
+	var data float32
+	gl.GetFloatv(gl.SAMPLE_COVERAGE_VALUE, &data)
+	return data
+}
+
+// GetSamples returns a value for the passed parameter name.
+func GetSamples() int32 {
+	var data int32
+	gl.GetIntegerv(gl.SAMPLES, &data)
+	return data
+}
+
+// GetScissorBox returns a value for the passed parameter name.
+func GetScissorBox() [4]int32 {
+	var data [4]int32
+	gl.GetIntegerv(gl.SCISSOR_BOX, &data[0])
+	return data
+}
+
+// GetScissorTest returns a value for the passed parameter name.
+func GetScissorTest() bool {
+	var data bool
+	gl.GetBooleanv(gl.SCISSOR_TEST, &data)
+	return data
+}
+
+// TODO: GetShadingLanguageVersion
+
+// GetStencilBackFail returns a value for the passed parameter name.
+func GetStencilBackFail() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_FAIL, &data)
+	return GLEnum(data)
+}
+
+// GetStencilBackFunc returns a value for the passed parameter name.
+func GetStencilBackFunc() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_FUNC, &data)
+	return GLEnum(data)
+}
+
+// GetStencilBackPassDepthFail returns a value for the passed parameter name.
+func GetStencilBackPassDepthFail() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_PASS_DEPTH_FAIL, &data)
+	return GLEnum(data)
+}
+
+// GetStencilBackPassDepthPass returns a value for the passed parameter name.
+func GetStencilBackPassDepthPass() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_PASS_DEPTH_PASS, &data)
+	return GLEnum(data)
+}
+
+// GetStencilBackRef returns a value for the passed parameter name.
+func GetStencilBackRef() int32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_REF, &data)
+	return data
+}
+
+// GetStencilBackValueMask returns a value for the passed parameter name.
+func GetStencilBackValueMask() uint32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_VALUE_MASK, &data)
+	return uint32(data)
+}
+
+// GetStencilBackWritemask returns a value for the passed parameter name.
+func GetStencilBackWritemask() uint32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BACK_WRITEMASK, &data)
+	return uint32(data)
+}
+
+// GetStencilBits returns a value for the passed parameter name.
+func GetStencilBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_BITS, &data)
+	return data
+}
+
+// GetStencilClearValue returns a value for the passed parameter name.
+func GetStencilClearValue() int32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_CLEAR_VALUE, &data)
+	return data
+}
+
+// GetStencilFail returns a value for the passed parameter name.
+func GetStencilFail() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_FAIL, &data)
+	return GLEnum(data)
+}
+
+// GetStencilFunc returns a value for the passed parameter name.
+func GetStencilFunc() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_FUNC, &data)
+	return GLEnum(data)
+}
+
+// GetStencilPassDepthFail returns a value for the passed parameter name.
+func GetStencilPassDepthFail() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_PASS_DEPTH_FAIL, &data)
+	return GLEnum(data)
+}
+
+// GetStencilPassDepthPass returns a value for the passed parameter name.
+func GetStencilPassDepthPass() GLEnum {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_PASS_DEPTH_PASS, &data)
+	return GLEnum(data)
+}
+
+// GetStencilRef returns a value for the passed parameter name.
+func GetStencilRef() int32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_REF, &data)
+	return data
+}
+
+// GetStencilTest returns a value for the passed parameter name.
+func GetStencilTest() bool {
+	var data bool
+	gl.GetBooleanv(gl.STENCIL_TEST, &data)
+	return data
+}
+
+// GetStencilValueMask returns a value for the passed parameter name.
+func GetStencilValueMask() uint32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_VALUE_MASK, &data)
+	return uint32(data)
+}
+
+// GetStencilWritemask returns a value for the passed parameter name.
+func GetStencilWritemask() uint32 {
+	var data int32
+	gl.GetIntegerv(gl.STENCIL_WRITEMASK, &data)
+	return uint32(data)
+}
+
+// GetSubpixelBits returns a value for the passed parameter name.
+func GetSubpixelBits() int32 {
+	var data int32
+	gl.GetIntegerv(gl.SUBPIXEL_BITS, &data)
+	return data
+}
+
+// GetTextureBinding2D returns a value for the passed parameter name.
+func GetTextureBinding2D() Texture {
+	var data int32
+	gl.GetIntegerv(gl.TEXTURE_BINDING_2D, &data)
+	return Texture(data)
+}
+
+// GetTextureBindingCubeMap returns a value for the passed parameter name.
+func GetTextureBindingCubeMap() Texture {
+	var data int32
+	gl.GetIntegerv(gl.TEXTURE_BINDING_CUBE_MAP, &data)
+	return Texture(data)
+}
+
+// GetUnpackAlignment returns a value for the passed parameter name.
+func GetUnpackAlignment() int32 {
+	var data int32
+	gl.GetIntegerv(gl.UNPACK_ALIGNMENT, &data)
+	return data
+}
+
+// TODO: GetVendor
+
+// TODO: GetVersion
+
+// GetViewport returns a value for the passed parameter name.
+func GetViewport() [4]int32 {
+	var data [4]int32
+	gl.GetIntegerv(gl.VIEWPORT, &data[0])
+	return data
+}
 
 // GetError returns error information.
 func GetError() GLEnum {
