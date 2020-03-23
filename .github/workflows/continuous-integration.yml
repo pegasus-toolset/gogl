@@ -31,6 +31,9 @@ jobs:
           sudo apt-get install libgl1-mesa-dev
           sudo apt-get install libglfw3-dev
 
+      - name: Start X
+        run: startx openbox
+
       - name: Test
         run: go test ./...
 
