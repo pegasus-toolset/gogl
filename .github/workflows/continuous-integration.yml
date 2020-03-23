@@ -11,10 +11,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: go install
-
-      - name: Run tests
-        run: go test ./...
+        run: go get -u ./...
 
   ubuntu-18-04:
     name: Ubuntu 18.04
@@ -24,10 +21,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: go install
-
-      - name: Run tests
-        run: go test ./...
+        run: go get -u ./...
 
   macos-10-15:
     name: macOS Catalina 10.15
@@ -37,7 +31,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: go install
-
-      - name: Run tests
-        run: go test ./...
+        run: go get -u ./...
