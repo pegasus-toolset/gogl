@@ -27,6 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install xorg
+          sudo apt-get install openbox
           sudo apt-get install libgl1-mesa-dev
           sudo apt-get install libglfw3-dev
 
