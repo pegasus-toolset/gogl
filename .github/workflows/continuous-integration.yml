@@ -24,6 +24,9 @@ jobs:
           go-version: 1.14
       - uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: sudo apt-get install libgl1-mesa-dev
+
       - name: Test
         run: go test ./...
 
