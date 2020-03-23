@@ -25,7 +25,17 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: sudo apt-get install libgl1-mesa-dev
+        run: |
+          sudo apt-get install nvidia-driver-430
+          sudo apt-get install xorg
+          sudo apt-get install xserver-xorg
+          sudo apt-get install libgl1-mesa-dev
+          sudo apt-get install libglfw3-dev
+
+      - name: Start X
+        run: |
+          nvidia-xconfig -a --use-display-device=None --virtual=1280x1024
+          /usr/bin/X :0 &
 
       - name: Test
         run: go test ./...
@@ -38,6 +48,11 @@ jobs:
         with:
           go-version: 1.14
       - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          brew install glfw3
+          ln -sf /usr/local/lib/libglfw3.dylib /usr/local/lib/libglfw.dylib
 
       - name: Test
         run: go test ./...
