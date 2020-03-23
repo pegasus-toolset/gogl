@@ -7,6 +7,11 @@ jobs:
     name: Windows Server 2019
     runs-on: windows-2019
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+
+      - name: Install dependencies
+        run: go get ./...
 
   ubuntu-18.04:
     name: Ubuntu 18.04
@@ -22,3 +27,8 @@ jobs:
     name: macOS Catalina 10.15
     runs-on: macos-10.15
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+
+      - name: Install dependencies
+        run: go get ./...
