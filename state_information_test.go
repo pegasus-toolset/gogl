@@ -9,7 +9,7 @@ import (
 )
 
 func InitGL() {
-	glfw.SetErrorCallback()
+	glfw.SetErrorCallback(ErrorCallback)
 
 	if !glfw.Init() {
 		panic("Failed to initialize GLFW")
