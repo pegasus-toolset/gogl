@@ -1,6 +1,9 @@
 <h1 align="center">📺 gogl</h1>
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/pegasus-toolset/gogl)](https://goreportcard.com/report/github.com/pegasus-toolset/gogl)
+<p align="center">
+    <a href="https://github.com/pegasus-toolset/gogl/actions"><img src="https://img.shields.io/github/workflow/status/pegasus-toolset/gogl/Continuous%20Integration" /></a>
+    <a href="https://goreportcard.com/report/github.com/pegasus-toolset/gogl"><img src="https://goreportcard.com/badge/github.com/pegasus-toolset/gogl" /></a>
+</p>
 
 **gogl** is a Go wrapper for OpenGL originally based on WebGL. Its purpose is to
 simplify and adapt OpenGL functions to the features of the Go programming
