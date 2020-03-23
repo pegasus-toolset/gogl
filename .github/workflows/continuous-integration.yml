@@ -31,7 +31,9 @@ jobs:
           sudo apt-get install libglfw3-dev
 
       - name: Start X
-        run: /usr/bin/X :0 &
+        run: |
+          nvidia-xconfig -a --use-display-device=None --virtual=1280x1024
+          /usr/bin/X :0 &
 
       - name: Test
         run: go test ./...
