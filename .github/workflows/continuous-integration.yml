@@ -28,7 +28,7 @@ jobs:
         run: |
           sudo apt-get install nvidia-driver-430
           sudo apt-get install xorg
-          sudo apt-get install xorg-server
+          sudo apt-get install xserver-xorg
           sudo apt-get install libgl1-mesa-dev
           sudo apt-get install libglfw3-dev
 
