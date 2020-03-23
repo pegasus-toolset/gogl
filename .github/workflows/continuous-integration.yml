@@ -43,8 +43,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install glfw3
-          ln -s /usr/local/lib/libglfw3.dylib /usr/local/lib/libglfw.dylib
+          brew install glfw
 
       - name: Test
         run: go test ./...
