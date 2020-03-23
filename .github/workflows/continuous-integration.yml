@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install libgl1-mesa-dev
-          sudo apt-get install libglfw3
+          sudo apt-get install libglfw3-dev
 
       - name: Test
         run: go test ./...
@@ -42,7 +42,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: brew install glfw3
+        run: |
+          brew install glfw3
+          ln -s /usr/local/lib/libglfw3.dylib /usr/local/lib/libglfw.dylib
 
       - name: Test
         run: go test ./...
