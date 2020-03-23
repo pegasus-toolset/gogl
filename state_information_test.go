@@ -1,6 +1,7 @@
 package gogl
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/go-gl/gl/v2.1/gl"
@@ -8,6 +9,8 @@ import (
 )
 
 func InitGL() {
+	glfw.SetErrorCallback()
+
 	if !glfw.Init() {
 		panic("Failed to initialize GLFW")
 	}
@@ -22,6 +25,10 @@ func InitGL() {
 	if err != nil {
 		panic("Failed to initialize OpenGL")
 	}
+}
+
+func ErrorCallback(code glfw.ErrorCode, desc string) {
+	fmt.Printf("Error: [%d] %s", code, desc)
 }
 
 func TestGetAlphaBits(t *testing.T) {
